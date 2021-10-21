@@ -1,0 +1,36 @@
+h1{
+    background-color: aquamarine;
+    text-align: center;
+}
+
+.foot{
+    text-align:center;
+}
+
+.cen{
+    display: inline-block;
+  vertical-align: top;
+  text-align: left;
+  border-left-style: solid;
+  border-left-color: aquamarine;
+}
+
+.len{
+    display: inline-block;
+  vertical-align: top;
+  text-align: justify;
+  width:20%;
+  
+}
+
+.rin{
+position: relative;
+float: right;
+    vertical-align: middle;
+  text-align: right;
+  border-style: dotted;
+}
+
+.niz:hover{
+    background-color:lightgreen;
+}
