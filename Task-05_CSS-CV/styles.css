@@ -15,12 +15,35 @@
   text-align: left;
 }
 
+.man{
+  border-bottom-style: solid;
+}
+
+.man1{
+  border-bottom-style: solid;
+  border-bottom-color: burlywood;
+}
+
 .lin:hover{
     color: red;
 }
 
 body{
     background-color:lightgray;
+}
+
+.contain_cen{
+  margin-left: 40px;
+  margin-right: 40px;
+}
+
+.contain_left{
+  width: 13%;
+  color: rgb(210, 30, 114);
+}
+
+.centr{
+  width: 100%;
 }
 
 
