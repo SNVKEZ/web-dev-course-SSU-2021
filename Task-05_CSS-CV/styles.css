@@ -1,0 +1,26 @@
+@font-face {
+    font-family: Qahiri-Regular;
+    src: url("/Qahiri-Regular.ttf");
+}
+
+.image{
+    display: inline-block;
+  vertical-align: top;
+}
+
+.cont{
+    position: relative;
+    float: right;
+    vertical-align: middle;
+  text-align: left;
+}
+
+.lin:hover{
+    color: red;
+}
+
+body{
+    background-color:lightgray;
+}
+
+
