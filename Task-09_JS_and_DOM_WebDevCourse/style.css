@@ -1,0 +1,15 @@
+body {
+    margin: 20px;
+    font-size: 14px;
+    background-color:#ebd1c5;
+}
+
+h1, h3{
+    color: #8b2113;
+}
+div{
+    border: 1px solid #881410;
+    padding: 10px;
+    margin-right: 10px;
+    text-align: center;
+    }
