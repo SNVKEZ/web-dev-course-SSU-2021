@@ -5,9 +5,9 @@ let countUser = document.querySelector('.count-user'),
     countComp = document.querySelector('.count-comp'),
     userField = document.querySelector('.user-field'),
     compField = document.querySelector('.comp-field'),
-    sound = document.querySelector('.sound'),
     play = document.querySelector('.play'),
     fields = document.querySelectorAll('.field'),
+    res = document.querySelector('.result'),
     userStep, compStep, countU = 0, countC = 0, blocked = false;
 
  function choiceUser(e){
@@ -26,18 +26,15 @@ let countUser = document.querySelector('.count-user'),
 
 
  function choiceComp(){
-     blocked = true;
-     
-     
+     blocked = true;     
+     let rand = Math.floor(Math.random()*3);
      compField.classList.add('blink');
      let compFields = compField.querySelectorAll('.field');
 
      setTimeout(()=>{  
         compField.classList.remove('blink');
-        compStep = compFields[Math.floor(Math.random() * 3)].dataset.field;
-        compFields[Math.floor(Math.random() * 3)].classList.add('active');
-        console.log(compFields);
-        
+        compStep = compFields[rand].dataset.field;
+        compFields[rand].classList.add('active');
         winner();
      },2000);
      
@@ -47,11 +44,41 @@ let countUser = document.querySelector('.count-user'),
      blocked = false;
      let comb = userStep+compStep;
      console.log(comb);
+     switch(comb){
+        case 'rr':
+        case 'ss':
+        case 'pp':
+             res.innerText = 'Ничья';             
+             break;
+        
+        case 'pr':            
+        case 'sp':            
+        case 'rs':
+            res.innerText = 'Победа';            
+            countU++;
+            countUser.innerText = countU;
+            compField.querySelector('[data-field='+compStep+']').classList.add('error');
+            break;
+
+        case 'rp':
+        case 'ps':
+        case 'sr':
+            res.innerText = 'Проигрыш';
+            countC++;
+            countComp.innerText = countC;
+            userField.querySelector('[data-field='+userStep+']').classList.add('error');
+            break;
+        }
+
     
  }
 
  function playGame(){
-
+     countU = countC = 0;
+     res.innerText = 'Сделайте выбор';
+     countUser.innerText = '0';
+     countComp.innerText = '0';
+     fields.forEach(item => item.classList.remove('active','error'));
  }
 
  play.addEventListener('click', playGame);
